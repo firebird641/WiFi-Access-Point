@@ -11,12 +11,12 @@ os.system("airmon-ng check kill")
 os.system("iptables -t nat -F")
 
 target = raw_input("SSID: ")
-iface = "wlp2s0"
+iface = "wlan0"
 ip = "192.168.100.1"
 nm = "255.255.255.0"
 
 os.system("sysctl net.ipv4.ip_forward=1")
-os.system("iptables -t nat -A POSTROUTING -o enp1s0f1 -j MASQUERADE")
+os.system("iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE")
 os.system("ifconfig "+iface+" "+ip+" netmask "+nm)
 
 time.sleep(3)
