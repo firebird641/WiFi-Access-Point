@@ -1,5 +1,5 @@
 # WiFi-Access-Point
-A simple Python script for setting up a temporary WLAN Access Point
+A simple Python script for setting up a temporary WPA2-Encrypted WLAN Access Point
 
 ## Dependencies
 You'll need:
