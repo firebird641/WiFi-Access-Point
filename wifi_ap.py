@@ -11,6 +11,7 @@ os.system("airmon-ng check kill")
 os.system("iptables -t nat -F")
 
 target = raw_input("SSID: ")
+passwd = raw_input("Passphrase: ")
 iface = "wlan0"
 ip = "192.168.100.1"
 nm = "255.255.255.0"
@@ -39,6 +40,8 @@ hostfile.write("driver=nl80211\n")
 hostfile.write("ssid="+target+"\n")
 hostfile.write("hw_mode=g\n")
 hostfile.write("channel=9\n")
+hostfile.write("wpa=2\n")
+hostfile.write("wpa_passphrase="+passwd+"\n")
 hostfile.close()
 
 os.system("killall -9 hostapd")
